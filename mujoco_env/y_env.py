@@ -15,13 +15,15 @@ class SimpleEnv:
                  xml_path,
                 action_type='eef_pose', 
                 state_type='joint_angle',
-                seed = None):
+                seed = None,
+                init_viewer=True):
         """
         args:
             xml_path: str, path to the xml file
             action_type: str, type of action space, 'eef_pose','delta_joint_angle' or 'joint_angle'
             state_type: str, type of state space, 'joint_angle' or 'ee_pose'
             seed: int, seed for random number generator
+            init_viewer: bool, whether to initialize the viewer
         """
         # Load the xml file
         self.env = MuJoCoParserClass(name='Tabletop',rel_xml_path=xml_path)
@@ -34,7 +36,10 @@ class SimpleEnv:
                     'joint4',
                     'joint5',
                     'joint6',]
-        self.init_viewer()
+        if init_viewer:
+            self.init_viewer()
+        else:
+            self.env.reset()
         self.reset(seed)
 
     def init_viewer(self):

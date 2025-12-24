@@ -7,3 +7,7 @@ omy_pnp
 .venv
 wandb
 omy_pnp_language
+gem/
+__pycache__/
+*.pyc
+*.pyo
