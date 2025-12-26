@@ -1,5 +1,5 @@
 dataset:
-  repo_id: omy_pnp_language # Repository ID
+  repo_id: JJinsup/omy_pnp_language # Repository ID
   root: ./demo_data_language # Your root for data file!
 policy:
   type : smolvla
@@ -9,7 +9,7 @@ policy:
   
 save_checkpoint: true
 output_dir: ./ckpt/smolvla_omy # Save directory
-batch_size: 16
+batch_size: 32
 job_name : smolvla_omy
 resume: false 
 seed : 42
@@ -24,5 +24,5 @@ use_policy_training_preset: true
 wandb:
   enable: true
   project: smolvla_omy
-  entity: <your_wandb_entity>
+  entity: jjinsup-kookmin-university  # 본인_WandB_아이디_입력
   disable_artifact: true

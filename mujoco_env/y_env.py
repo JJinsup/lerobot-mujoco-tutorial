@@ -60,7 +60,7 @@ class SimpleEnv:
         Reset the environment
         Move the robot to a initial position, set the object positions based on the seed
         '''
-        if seed != None: np.random.seed(seed=0) 
+        if seed is not None: np.random.seed(seed) 
         q_init = np.deg2rad([0,0,0,0,0,0])
         q_zero,ik_err_stack,ik_info = solve_ik(
             env = self.env,

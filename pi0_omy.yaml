@@ -1,14 +1,15 @@
 dataset:
-  repo_id: omy_pnp_language # Repository ID
+  repo_id: JJinsup/omy_pnp_language # Repository ID
   root: ./demo_data_language # Your root for data file!
 policy:
   type : pi0
   chunk_size: 5
   n_action_steps: 5
+  device: cuda
   
 save_checkpoint: true
 output_dir: ./ckpt/pi0_omy # Save directory
-batch_size: 16
+batch_size: 2
 job_name : pi0_omy
 resume: false 
 seed : 42
@@ -23,5 +24,5 @@ use_policy_training_preset: true
 wandb:
   enable: true
   project: pi0_omy
-  entity: <your_wandb_entity>
+  entity: jjinsup-kookmin-university # 본인_WandB_아이디_입력
   disable_artifact: true
